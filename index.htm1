@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaf Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 1rem;
+    }
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      background-color: #00c853;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: #000;
+      font-weight: 600;
+      margin: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #00e676;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-switch">
+    <button class="btn" onclick="switchLang()">ENG</button>
+  </div>
+  <img class="logo" src="logo.png" alt="Leaf Team Logo" />
+  <h1 id="main-text">Це арбітраж команда Leaf team</h1>
+  <p id="description">
+    Ми українська арбітраж команда. Наладжені на ріст. Виплати кожен тиждень в неділю,
+    офери часто міняються та в нас дружній колектив. Заливаємо всі на однаковий офер.
+    Поступово міняєм офери на дорожчі і тяжчі також спосіб заливу.
+  </p>
+  <div>
+    <button class="btn" onclick="joinTeam()">Приєднатися</button>
+    <button class="btn" onclick="contactUs()">Зв'язок з нами</button>
+  </div>
+
+  <script>
+    function switchLang() {
+      const current = document.getElementById("main-text").innerText;
+      if (current.includes("Leaf team")) {
+        document.getElementById("main-text").innerText = "This is Leaf Team arbitration crew";
+        document.getElementById("description").innerText =
+          "We are a Ukrainian arbitration team focused on growth. Weekly payouts on Sundays, changing offers, friendly team spirit, and step-by-step scaling.";
+        document.querySelectorAll(".btn")[0].innerText = "Join us";
+        document.querySelectorAll(".btn")[1].innerText = "Contact us";
+        document.querySelector(".lang-switch button").innerText = "УКР";
+      } else {
+        document.getElementById("main-text").innerText = "Це арбітраж команда Leaf team";
+        document.getElementById("description").innerText =
+          "Ми українська арбітраж команда. Наладжені на ріст. Виплати кожен тиждень в неділю, офери часто міняються та в нас дружній колектив. Заливаємо всі на однаковий офер. Поступово міняєм офери на дорожчі і тяжчі також спосіб заливу.";
+        document.querySelectorAll(".btn")[0].innerText = "Приєднатися";
+        document.querySelectorAll(".btn")[1].innerText = "Зв'язок з нами";
+        document.querySelector(".lang-switch button").innerText = "ENG";
+      }
+    }
+
+    function joinTeam() {
+      alert("Функція реєстрації через Google скоро буде доступна ✅");
+    }
+
+    function contactUs() {
+      document.body.style.backgroundImage = "url('logo.png')";
+      document.body.style.backgroundSize = "cover";
+      document.body.innerHTML = '<h1 style="margin-top: 30vh;">Telegram: <a href="https://t.me/Rostik8366" style="color:#00c853">@Rostik8366</a></h1>';
+    }
+  </script>
+</body>
+</html>
